@@ -7,11 +7,11 @@ Isso conta como uma visita real e reinicia o contador de inatividade.
 from playwright.sync_api import sync_playwright
 
 SITES = [
-    "https://pcarena.streamlit.app/",
-    "https://checklistpcholyrics.streamlit.app/",
-    "https://checklistiluminacao.streamlit.app/",
+    "https://arenacheck.streamlit.app/",
+    "https://holyricscheck.streamlit.app/",
+    "https://iluminacaocheck.streamlit.app/",
     # Troque pela URL real do painel de acompanhamento:
-    "https://SEU-PAINEL-AQUI.streamlit.app/",
+    "https://painelcheck.streamlit.app//",
 ]
 
 TEMPO_ESPERA_MS = 8000  # tempo extra pra garantir que o WebSocket conectou
