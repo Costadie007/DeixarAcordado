@@ -1,0 +1,25 @@
+name: Visitar sites pra manter acordados
+
+on:
+  schedule:
+    # 09:00 e 21:00 em UTC = 06:00 e 18:00 em Brasília (UTC-3).
+    - cron: "0 9,21 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  visitar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Abrir os sites de verdade
+        run: python visitar_sites.py
